@@ -9,13 +9,14 @@ a:hover {
 }
 
 body {
-  background-color: #fff;
+  background-color: #eee;
   font-family: 'Press Start 2P','Play', sans-serif;
   /*font-weight: 700;*/
   font-style: italic;
   color: #000;
   font-size: 50px;
   text-align: center;
+
 }
 
 h1 {
@@ -33,6 +34,7 @@ h2 {
 #container {
   max-width: 800px;
   margin: 0 auto;
+  z-index: 5;
   /*background-color: #fff;*/
   /*height: 100%;*/
 }
@@ -58,6 +60,90 @@ h2 {
 
 #comingsoon {
   font-size: 25px;
+}
+
+#background {
+  position:fixed;
+  left:0;top:0;right:0;bottom:0;
+  overflow: visible;
+  z-index:-1;
+  background-color: #000;
+  display: none;
+  text-align: center;
+}
+
+
+
+
+
+/*@-webkit-keyframes pulse {
+  from {
+
+    color: #fff;
+  }
+  to {
+
+    color: #000;
+  }
+}*/
+
+
+
+
+.four04 {
+  padding: 30px;
+  font-size: 30px;
+  text-align: center;
+  float: left;
+  background-color: #000;
+  color: #fff;
+/*  -webkit-animation-name: pulse;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-duration: 0s;*/
+}
+
+
+
+
+.four04vm {
+  font-size: 10px;
+}
+
+.black {
+  background-color: #000;
+  color: #fff;
+}
+
+.white {
+  background-color: #fff;
+  color: #000;
+}
+
+.email {
+  position:fixed;
+  top: 200px;
+  left: 50%;
+  margin-left: -260px;
+  padding: 30px;
+  font-size: 65px;
+  text-align: center;
+
+  color: #fff;
+  z-index: 10;
+  display: none;
+}
+
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  color: #000;
 }
 
 img {
