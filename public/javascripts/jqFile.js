@@ -1,15 +1,16 @@
 $(document).ready(function(){
 
-  var numberOfClones = 500;
-  var el = $(".four04");
-  for (var i = 0; i < numberOfClones; i++){
-    var newEl = el.clone();
-    $("#background").append(newEl);
-  }
+  // var numberOfClones = 500;
+  // var el = $(".four04");
+  // for (var i = 0; i < numberOfClones; i++){
+  //   var newEl = el.clone();
+  //   $("#background").append(newEl);
+  // }
 
 
   $('#svg').hover(
     function() {
+      running = false;
       console.log('in');
       $('#background').show();
       $('.email').show();
@@ -20,6 +21,7 @@ $(document).ready(function(){
       // }();
 
     }, function() {
+      running = true;
       console.log('out');
       $('#background').hide();
       $('.email').hide();
@@ -29,11 +31,12 @@ $(document).ready(function(){
 
   $('.email').hover(
     function() {
+      running = false;
       $('#background').show();
       $('.email').show();
       $('#text').hide();
     }, function() {
-
+      running = true;
       $('#background').hide();
       $('.email').hide();
       $('#text').show();

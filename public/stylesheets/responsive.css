@@ -1,0 +1,71 @@
+@media screen and (max-width: 640px) {
+
+
+  body {
+    font-size:25px;
+    background-color: #000;
+  }
+
+  #title {
+    font-size: 40px;
+    color: #fff;
+  }
+
+  #comingsoon {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .email {
+    font-size: 60px;
+    display: inline;
+    top: 200px;
+  }
+
+  #background {
+    display: none;
+    opacity: .1%;
+  }
+
+  .four04, .four04vm{
+    opacity: .1%;
+    display: none;
+  }
+
+}
+/*
+@media screen and (min-width: 660px) {
+
+
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-right: 5%;
+    text-align: right;
+    width: 45%;
+  }
+
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+
+  header {
+    border-bottom: 5px solid #599a68;
+    margin-bottom: 60px;
+  }
+
+
+}*/

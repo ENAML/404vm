@@ -26,15 +26,32 @@ window.onload=function(){
 
 
     //animate face children uniquely
-    var animate = setInterval(function() {
+    // function animate() {
+    //   setTimeout(function() {
+    //       facePaths.forEach(function(el) {
+    //         el.animate({fill: colorPicker(colors)},1000);
+    //       });
+    //       requestAnimationFrame(animate);
+    //   }, 500);
+    // }
+    // requestAnimationFrame(animate);
 
-        facePaths.forEach(function(el) {
-          el.animate({fill: colorPicker(colors)},1000);
-        });
+    var intervals = [];
 
-    }, 500);
+    var startAnim = function() {
+      facePaths.forEach(function(el) {
+        var time = 500+~~(1000*Math.random());
+        intervals.push(setInterval(function(){
+          el.animate({fill: colorPicker(colors)}, time);
+        }, time - 200));
+      });
+    };
 
+    stopAnim = function(){
+      intervals.forEach(clearInterval);
+    };
 
+    startAnim();
 
 
     s.append( f ); // adds to document
