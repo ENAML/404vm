@@ -11,9 +11,9 @@ $(document).ready(function(){
   $('#svg').hover(
     function() {
       running = false;
-      console.log('in');
+      // console.log('in');
       $('#background').show();
-      $('.email').show();
+      $('.play').show();
       $('#text').hide();
       // !function loop() {
       //   $('.four04').animate({backgroundColor: '#fff', color: '#000'},5);
@@ -22,23 +22,23 @@ $(document).ready(function(){
 
     }, function() {
       running = true;
-      console.log('out');
+      // console.log('out');
       $('#background').hide();
-      $('.email').hide();
+      $('.play').hide();
       $('#text').show();
     }
   );
 
-  $('.email').hover(
+  $('.play').hover(
     function() {
       running = false;
       $('#background').show();
-      $('.email').show();
+      $('.play').show();
       $('#text').hide();
     }, function() {
       running = true;
       $('#background').hide();
-      $('.email').hide();
+      $('.play').hide();
       $('#text').show();
     }
   );
