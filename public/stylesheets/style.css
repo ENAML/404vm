@@ -70,28 +70,6 @@ a, a:hover, a:visited, a:active {
 
 
 
-
-.four04 {
-  padding: 30px;
-  font-size: 30px;
-  text-align: center;
-  float: left;
-  background-color: #000;
-  color: #fff;
-/*  -webkit-animation-name: pulse;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-duration: 0s;*/
-}
-
-
-
-
-.four04vm {
-  font-size: 10px;
-}
-
 .play {
   position:absolute;
   top: 350px;
@@ -157,13 +135,108 @@ nav ul li a:hover {
   background-color: white;
 }
 
-
-img {
-  image-rendering: optimizeSpeed;             /* FUCK SMOOTHING, GIVE ME SPEED  */
-  image-rendering: -moz-crisp-edges;          /* Firefox                        */
-  image-rendering: -o-crisp-edges;            /* Opera                          */
-  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+.alert {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  width: 500px;
+  /*height: 200px;*/
+  border: 3px solid black;
+  background-color: white;
 }
 
+.alert .alertTop {
+  height: 35px;
+  background-color: black;
+  width: 100%;
+}
+
+.alertTopText {
+  float: left;
+  color: red;
+  text-align: left;
+  font-size: 15px;
+  padding: 10px;
+  margin-left: 0;
+}
+
+.alert .alertBody {
+  width: 100%;
+  background-color: white;
+  /*height: 165px;*/
+}
+
+.alert .alertBody p {
+  text-transform: uppercase;
+  line-height: 150%;
+  /*font-style: normal;*/
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+  font-size: 15px;
+}
+.alert .alertBody a {
+  text-transform: uppercase;
+/*  padding-left: 15px;
+  padding-right: 15px;*/
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+  color: #2d42ff;
+}
+
+.alert .alertBody a:hover {
+  color: #ffff00;
+  background-color: black;
+}
+
+
+img {
+  image-rendering: optimizeSpeed;       /* FUCK SMOOTHING, GIVE ME SPEED */
+  image-rendering: -moz-crisp-edges;          /* Firefox    */
+  image-rendering: -o-crisp-edges;             /*Opera    */
+  image-rendering: -webkit-optimize-contrast; /* Chrome and eventually Safari */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed   */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+   */
+}
+
+
+.glitch {
+  color: white;
+}
+
+/* safari and chrome */
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: translate(10px,0px);}
+  25% {-webkit-transform: translate(0px,10px);}
+  50% {-webkit-transform:translate(-10px,0px);}
+  75% {-webkit-transform: translate(0px,-10px);}
+  100% {-webkit-transform:translate(10px,0px);}
+}
+
+/*@-webkit-keyframes wiggle {
+  0% {-webkit-transform: translate(100px,0px) scale(2,1);}
+  50% {-webkit-transform: translate(-100px,0px) scale(1,2);}
+  100% {-webkit-transform: translate(100px,0px) scale(2,1);}
+}*/
+
+/* firefox */
+@-moz-keyframes wiggle {
+  0% {-moz-transform:rotate(4deg);}
+  50% {-moz-transform:rotate(-4deg);}
+  100% {-moz-transform:rotate(4deg);}
+}
+
+/* anyone brave enough to implement the ideal method */
+@keyframes wiggle {
+  0% {transform:rotate(4deg);}
+  50% {transform:rotate(-4deg);}
+  100% {transform:rotate(4deg);}
+}
+
+.wiggler {
+  -webkit-animation: wiggle 0.1s infinite;
+  -moz-animation: wiggle 0.5s infinite;
+  animation: wiggle 0.5s infinite;
+}

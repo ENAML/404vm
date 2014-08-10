@@ -41,10 +41,10 @@ $(document).ready(function(){
     // global vars
     startAnim = function() {
       facePaths.forEach(function(el) {
-        var time = 500+~~(1000*Math.random());
+        var time = 300+~~(1000*Math.random());
         intervals.push(setInterval(function(){
           el.animate({fill: colorPicker(colors)}, time);
-        }, time - 200));
+        }, time - 100));
       });
     };
     stopAnim = function(){
@@ -93,8 +93,22 @@ $(document).ready(function(){
       $('#text').show();
     }
   );
+
+  $('#alertLink').click(function() {
+    $('.alert').css({'left': '50%', 'margin-left':'-250px','top':'300px'});
+    $('.alert').show('fast');
+
+    $('li').addClass('wiggler');
+    $('nav').addClass('wiggler');
+    $('#title').addClass('wiggler');
+    $('#comingsoon').addClass('wiggler');
+    $('#container').addClass('wiggler');
+  });
+
+  $('.alertTopText').click(function() {
+    $('.alert').hide('fast');
+  });
+
+  $( ".alert" ).draggable();
+
 });
-
-
-
-
