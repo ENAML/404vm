@@ -53,22 +53,13 @@ a, a:hover, a:visited, a:active {
   background-repeat: repeat;
 }
 
-
-
-
-
-/*@-webkit-keyframes pulse {
-  from {
-
-    color: #fff;
-  }
-  to {
-
-    color: #000;
-  }
-}*/
-
-
+#backgroundbackground {
+  position:fixed;
+  left:0;top:0;right:0;bottom:0;
+  z-index:-2;
+  background-color: #000;
+  display: none;
+}
 
 .play {
   position:absolute;
@@ -89,14 +80,6 @@ a, a:hover, a:visited, a:active {
 .play a:hover {
   color: #FFF;
 }
-
-
-
-a:hover {
-
-  /*color: #000;*/
-}
-
 
 nav {
   top: 0;
@@ -153,7 +136,16 @@ nav ul li a:hover {
 
 .alertTopText {
   float: left;
-  color: red;
+  color: #ff006c;
+  text-align: left;
+  font-size: 15px;
+  padding: 10px;
+  margin-left: 0;
+}
+
+.alertTopClose {
+  float: right;
+  color: #ff006c;
   text-align: left;
   font-size: 15px;
   padding: 10px;
@@ -201,11 +193,6 @@ img {
   -ms-interpolation-mode: nearest-neighbor;   /* IE8+   */
 }
 
-
-.glitch {
-  color: white;
-}
-
 /* safari and chrome */
 @-webkit-keyframes wiggle {
   0% {-webkit-transform: translate(10px,0px);}
@@ -213,6 +200,22 @@ img {
   50% {-webkit-transform:translate(-10px,0px);}
   75% {-webkit-transform: translate(0px,-10px);}
   100% {-webkit-transform:translate(10px,0px);}
+}
+
+@-webkit-keyframes wiggleTwo {
+  0% {-webkit-transform: translate(0px,5px);}
+  25% {-webkit-transform: translate(20px,0px);}
+  50% {-webkit-transform:translate(0px,-5px);}
+  75% {-webkit-transform: translate(-20px,0px);}
+  100% {-webkit-transform:translate(0px,5px);}
+}
+
+@-webkit-keyframes pulseText {
+  0% {color: #00ff00;}
+  25% {color: #ff006c;}
+  50% {color: #2d42ff;}
+  75% {color: #882dff;}
+  100% {color: #ffff00;}
 }
 
 /*@-webkit-keyframes wiggle {
@@ -223,20 +226,68 @@ img {
 
 /* firefox */
 @-moz-keyframes wiggle {
-  0% {-moz-transform:rotate(4deg);}
-  50% {-moz-transform:rotate(-4deg);}
-  100% {-moz-transform:rotate(4deg);}
+  0% {-moz-transform: translate(10px,0px);}
+  25% {-moz-transform: translate(0px,10px);}
+  50% {-moz-transform:translate(-10px,0px);}
+  75% {-moz-transform: translate(0px,-10px);}
+  100% {-moz-transform:translate(10px,0px);}
 }
 
-/* anyone brave enough to implement the ideal method */
+@-moz-keyframes wiggleTwo {
+  0% {-moz-transform: translate(0px,5px);}
+  25% {-moz-transform: translate(20px,0px);}
+  50% {-moz-transform:translate(0px,-5px);}
+  75% {-moz-transform: translate(-20px,0px);}
+  100% {-moz-transform:translate(0px,5px);}
+}
+
+@-moz-keyframes pulseText {
+  0% {color: #00ff00;}
+  25% {color: #ff006c;}
+  50% {color: #2d42ff;}
+  75% {color: #882dff;}
+  100% {color: #ffff00;}
+}
+
+/* ideal method */
 @keyframes wiggle {
-  0% {transform:rotate(4deg);}
-  50% {transform:rotate(-4deg);}
-  100% {transform:rotate(4deg);}
+  0% {transform: translate(10px,0px);}
+  25% {transform: translate(0px,10px);}
+  50% {transform:translate(-10px,0px);}
+  75% {transform: translate(0px,-10px);}
+  100% {transform:translate(10px,0px);}
+}
+
+@keyframes wiggleTwo {
+  0% {transform: translate(0px,5px);}
+  25% {transform: translate(20px,0px);}
+  50% {transform:translate(0px,-5px);}
+  75% {transform: translate(-20px,0px);}
+  100% {transform:translate(0px,5px);}
+}
+
+@keyframes pulseText {
+  0% {color: #00ff00;}
+  25% {color: #ff006c;}
+  50% {color: #2d42ff;}
+  75% {color: #882dff;}
+  100% {color: #ffff00;}
 }
 
 .wiggler {
   -webkit-animation: wiggle 0.1s infinite;
-  -moz-animation: wiggle 0.5s infinite;
-  animation: wiggle 0.5s infinite;
+  -moz-animation: wiggle 0.1s infinite;
+  animation: wiggle 0.1s infinite;
+}
+
+.wiggler2 {
+  -webkit-animation: wiggleTwo 0.1s infinite;
+  -moz-animation: wiggleTwo 0.1s infinite;
+  animation: wiggleTwo 0.1s infinite;
+}
+
+.pulseText {
+  -webkit-animation: pulseText .5s infinite;
+  -moz-animation: pulseText .5s infinite;
+  animation: pulseText .5s infinite;
 }

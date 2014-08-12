@@ -4,7 +4,7 @@ $(document).ready(function(){
   /////////////////////////////
   /////// START SVG CODE
   /////////////////////////////
-  var colors = ['#00ff00','#ffff00' ,'#2d42ff','#882dff', '#fff', '#ff0000'];
+  var colors = ['#00ff00','#ffff00' ,'#2d42ff','#882dff', '#ff006c'];
 
   var colorPicker = function(colors) {
     return colors[Math.floor(Math.random()*colors.length)];
@@ -63,50 +63,80 @@ $(document).ready(function(){
   /////// START JQ CODE
   /////////////////////////////
 
+  var alerted = false;
+
   $('#svg').hover(
     function() {
-      stopAnim();
+
       // console.log('in');
-      $('#background').show();
-      $('.play').show();
-      $('#text').hide();
+      if (alerted === false) {
+        stopAnim();
+        $('#background').show();
+        $('#backgroundbackground').show();
+        $('.play').show();
+        $('#text').hide();
+      }
 
     }, function() {
-      startAnim();
-      // console.log('out');
-      $('#background').hide();
-      $('.play').hide();
-      $('#text').show();
+
+      // console.log('out');\
+      if (alerted === false) {
+        startAnim();
+        $('#background').hide();
+        $('#backgroundbackground').hide();
+        $('.play').hide();
+        $('#text').show();
+      }
     }
   );
 
   $('.play').hover(
     function() {
-      stopAnim();
-      $('#background').show();
-      $('.play').show();
-      $('#text').hide();
+
+      if (alerted === false) {
+        stopAnim();
+        $('#background').show();
+        $('#backgroundbackground').show();
+        $('.play').show();
+        $('#text').hide();
+      }
     }, function() {
-      startAnim();
-      $('#background').hide();
-      $('.play').hide();
-      $('#text').show();
+
+      if (alerted === false) {
+        startAnim();
+        $('#background').hide();
+        $('#backgroundbackground').hide();
+        $('.play').hide();
+        $('#text').show();
+      }
     }
   );
 
-  $('#alertLink').click(function() {
+  $('.alertLink').click(function() {
+    alerted = true;
     $('.alert').css({'left': '50%', 'margin-left':'-250px','top':'300px'});
-    $('.alert').show('fast');
-
+    $('.alert').show();
+    $('#text').show();
     $('li').addClass('wiggler');
+    $('li a').addClass('pulseText');
     $('nav').addClass('wiggler');
-    $('#title').addClass('wiggler');
-    $('#comingsoon').addClass('wiggler');
-    $('#container').addClass('wiggler');
+    $('#title').addClass('pulseText');
+    $('#comingsoon').addClass('pulseText');
+    $('#container').addClass('wiggler2');
+    $('#background').addClass('wiggler');
   });
 
-  $('.alertTopText').click(function() {
-    $('.alert').hide('fast');
+  $('.alertTopClose').click(function() {
+    alerted = false;
+    $('.alert').hide();
+
+    $('li').removeClass('wiggler');
+    $('li a').removeClass('pulseText');
+    $('nav').removeClass('wiggler');
+    $('#title').removeClass('pulseText');
+    $('#comingsoon').removeClass('pulseText');
+    $('#container').removeClass('wiggler2');
+    $('#background').removeClass('wiggler');
   });
 
   $( ".alert" ).draggable();
